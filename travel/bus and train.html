@@ -1,36 +1,25 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>TravelGo - Bus & Train Ticket Booking</title>
-
     <style>
-        /* GENERAL STYLING */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             background-color: #f4f7fb;
             color: #263238;
             line-height: 1.6;
         }
-
         a {
             text-decoration: none;
         }
-
-        /* HEADER */
         header {
             background: linear-gradient(135deg, #073b65, #087e8b);
             color: white;
@@ -41,33 +30,26 @@
             flex-wrap: wrap;
             gap: 15px;
         }
-
         .logo {
             font-size: 28px;
             font-weight: bold;
         }
-
         .logo span {
             color: #ffd166;
         }
-
         nav {
             display: flex;
             flex-wrap: wrap;
             gap: 22px;
         }
-
         nav a {
             color: white;
             font-size: 15px;
             font-weight: bold;
         }
-
         nav a:hover {
             color: #ffd166;
         }
-
-        /* HERO SECTION */
         .hero {
             min-height: 340px;
             padding: 65px 7%;
@@ -80,17 +62,14 @@
             background-size: cover;
             background-position: center;
         }
-
         .hero h1 {
             font-size: 43px;
             margin-bottom: 15px;
         }
-
         .hero p {
             font-size: 18px;
             margin-bottom: 25px;
         }
-
         .hero .hero-button {
             display: inline-block;
             padding: 12px 28px;
@@ -99,28 +78,22 @@
             font-weight: bold;
             border-radius: 6px;
         }
-
-        /* COMMON SECTION */
         .container {
             width: 88%;
             max-width: 1250px;
             margin: 45px auto;
         }
-
         .section-title {
             text-align: center;
             color: #073b65;
             font-size: 30px;
             margin-bottom: 10px;
         }
-
         .section-description {
             text-align: center;
             color: #687782;
             margin-bottom: 30px;
         }
-
-        /* BOOKING FORM */
         .booking-box {
             background: white;
             margin-top: -35px;
@@ -129,14 +102,12 @@
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
         }
-
         .booking-tabs {
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
             margin-bottom: 25px;
         }
-
         .tab {
             padding: 11px 25px;
             background: #e8f2f7;
@@ -144,25 +115,21 @@
             border-radius: 6px;
             font-weight: bold;
         }
-
         .tab.active {
             background: #087e8b;
             color: white;
         }
-
         .form-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 20px;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
             color: #334e68;
         }
-
         .form-group input,
         .form-group select {
             width: 100%;
@@ -172,17 +139,14 @@
             font-size: 15px;
             background: white;
         }
-
         .form-group input:focus,
         .form-group select:focus {
             outline: 2px solid #087e8b;
             border-color: transparent;
         }
-
         .full-width {
             grid-column: 1 / -1;
         }
-
         .search-button {
             display: block;
             width: 100%;
@@ -195,19 +159,15 @@
             border-radius: 7px;
             cursor: pointer;
         }
-
         .search-button:hover {
             background: #e8742c;
         }
-
-        /* TRAVEL SERVICES */
         .service-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
-
         .service-card {
             background: white;
             padding: 28px;
@@ -217,26 +177,21 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s;
         }
-
         .service-card:hover {
             transform: translateY(-5px);
         }
-
         .service-icon {
             font-size: 45px;
             margin-bottom: 12px;
         }
-
         .service-card h3 {
             color: #073b65;
             margin-bottom: 10px;
         }
-
         .service-card p {
             color: #687782;
             margin-bottom: 18px;
         }
-
         .service-card a {
             display: inline-block;
             background: #087e8b;
@@ -245,8 +200,6 @@
             border-radius: 5px;
             font-weight: bold;
         }
-
-        /* AVAILABLE TRAVEL CARDS */
         .travel-card {
             display: flex;
             justify-content: space-between;
@@ -260,59 +213,48 @@
             border-left: 5px solid #087e8b;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
-
         .travel-info h3 {
             color: #073b65;
             margin-bottom: 8px;
         }
-
         .travel-info p {
             color: #687782;
             font-size: 14px;
         }
-
         .route {
             font-size: 19px;
             font-weight: bold;
             color: #263238;
             margin-bottom: 7px;
         }
-
         .route span {
             color: #087e8b;
             padding: 0 8px;
         }
-
         .travel-time {
             text-align: center;
         }
-
         .travel-time h4 {
             font-size: 20px;
             color: #073b65;
         }
-
         .travel-time p {
             color: #687782;
             font-size: 13px;
         }
-
         .fare-box {
             text-align: center;
         }
-
         .fare {
             color: #087e8b;
             font-size: 24px;
             font-weight: bold;
         }
-
         .fare-box small {
             display: block;
             color: #687782;
             margin-bottom: 10px;
         }
-
         .book-button {
             display: inline-block;
             padding: 10px 20px;
@@ -321,89 +263,70 @@
             font-weight: bold;
             border-radius: 5px;
         }
-
         .book-button:hover {
             background: #e8742c;
         }
-
-        /* FARE TABLE */
         .table-wrapper {
             overflow-x: auto;
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             min-width: 650px;
         }
-
         th {
             background: #073b65;
             color: white;
             padding: 16px;
             text-align: left;
         }
-
         td {
             padding: 15px 16px;
             border-bottom: 1px solid #e4eaf0;
         }
-
         tr:nth-child(even) {
             background: #f1f7fa;
         }
-
         tr:hover {
             background: #e3f2f5;
         }
-
         .available {
             color: #16834a;
             font-weight: bold;
         }
-
         .limited {
             color: #d97706;
             font-weight: bold;
         }
-
-        /* PASSENGER DETAILS */
         .passenger-box {
             background: white;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
-
         .passenger-box h3 {
             color: #073b65;
             margin-bottom: 20px;
         }
-
         .passenger-form {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 20px;
         }
-
         .passenger-form .form-group input,
         .passenger-form .form-group select {
             margin-bottom: 5px;
         }
-
         .terms {
             margin: 20px 0;
             color: #526575;
         }
-
         .terms input {
             margin-right: 8px;
         }
-
-        /* SEAT SELECTION */
         .seat-layout {
             display: grid;
             grid-template-columns: repeat(4, 55px);
@@ -411,7 +334,6 @@
             justify-content: center;
             margin: 25px auto;
         }
-
         .seat {
             border: 1px solid #087e8b;
             background: #e0f5ee;
@@ -423,23 +345,19 @@
             align-items: center;
             font-weight: bold;
         }
-
         .seat.occupied {
             background: #d7dde3;
             border-color: #b2bbc4;
             color: #65727e;
         }
-
         .seat.selected {
             background: #087e8b;
             border-color: #087e8b;
             color: white;
         }
-
         .seat.aisle {
             margin-left: 25px;
         }
-
         .seat-legend {
             display: flex;
             justify-content: center;
@@ -447,14 +365,12 @@
             gap: 22px;
             margin-top: 20px;
         }
-
         .legend-item {
             display: flex;
             align-items: center;
             gap: 7px;
             font-size: 14px;
         }
-
         .legend-box {
             width: 17px;
             height: 17px;
@@ -462,46 +378,37 @@
             border: 1px solid #087e8b;
             background: #e0f5ee;
         }
-
         .legend-box.booked {
             background: #d7dde3;
             border-color: #b2bbc4;
         }
-
         .legend-box.chosen {
             background: #087e8b;
         }
-
         .seat-note {
             text-align: center;
             color: #687782;
             margin-top: 15px;
             font-size: 14px;
         }
-
-        /* OFFERS */
         .offer-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 25px;
         }
-
         .offer-card {
             padding: 30px;
             border-radius: 12px;
             color: white;
             background: linear-gradient(135deg, #087e8b, #073b65);
         }
-
         .offer-card:nth-child(2) {
             background: linear-gradient(135deg, #ff8c42, #e85d75);
         }
-
         .offer-card h3 {
             font-size: 23px;
             margin-bottom: 10px;
         }
-
         .offer-code {
             display: inline-block;
             margin-top: 15px;
@@ -511,80 +418,64 @@
             border-radius: 5px;
             font-weight: bold;
         }
-
-        /* WHY CHOOSE US */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 20px;
             text-align: center;
         }
-
         .feature {
             background: white;
             padding: 22px 15px;
             border-radius: 10px;
         }
-
         .feature h3 {
             font-size: 17px;
             color: #073b65;
             margin-bottom: 8px;
         }
-
         .feature p {
             font-size: 14px;
             color: #687782;
         }
-
-        /* CONTACT SECTION */
         .contact {
             background: #e8f2f7;
             padding: 35px;
             text-align: center;
             border-radius: 12px;
         }
-
         .contact h2 {
             color: #073b65;
             margin-bottom: 12px;
         }
-
         .contact p {
             margin: 8px 0;
         }
-
-        /* FOOTER */
         footer {
             background: #062b49;
             color: white;
             padding: 35px 7% 20px;
             margin-top: 50px;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 30px;
             margin-bottom: 25px;
         }
-
         footer h3 {
             color: #ffd166;
             margin-bottom: 12px;
         }
-
         footer p,
         footer a {
             color: #d5e2eb;
             font-size: 14px;
         }
-
         footer a {
             display: block;
             margin: 7px 0;
         }
-
         .copyright {
             text-align: center;
             padding-top: 20px;
@@ -592,119 +483,12 @@
             font-size: 13px;
             color: #d5e2eb;
         }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav {
-                justify-content: center;
-            }
-
-            .form-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .service-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .travel-card {
-                align-items: flex-start;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                padding: 50px 5%;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .container {
-                width: 92%;
-                margin: 35px auto;
-            }
-
-            .booking-box {
-                padding: 20px;
-            }
-
-            .section-title {
-                font-size: 25px;
-            }
-
-            .form-grid,
-            .service-grid,
-            .passenger-form,
-            .offer-grid,
-            .features-grid,
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .full-width {
-                grid-column: auto;
-            }
-
-            .travel-card {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .travel-time,
-            .fare-box {
-                text-align: left;
-            }
-
-            .seat-layout {
-                grid-template-columns: repeat(4, 45px);
-                gap: 9px;
-            }
-
-            .seat {
-                height: 42px;
-                font-size: 13px;
-            }
-
-            .seat.aisle {
-                margin-left: 12px;
-            }
-
-            nav {
-                gap: 12px;
-            }
-
-            nav a {
-                font-size: 13px;
-            }
-        }
     </style>
 </head>
 
 <body>
-
-    <!-- HEADER AND NAVIGATION -->
     <header>
         <div class="logo">Travel<span>Go</span> 🚆</div>
-
         <nav>
             <a href="#home">Home</a>
             <a href="#booking">Book Tickets</a>
@@ -714,52 +498,36 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
-
-    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <h1>Your Journey Begins Here!</h1>
-
         <p>
             Book bus and train tickets easily.
             Explore new places and travel comfortably.
         </p>
-
         <a href="#booking" class="hero-button">Plan Your Journey</a>
     </section>
-
-    <!-- BOOKING FORM -->
     <section class="container" id="booking">
-
         <div class="booking-box">
-
             <h2 class="section-title">Book Your Tickets</h2>
-
             <p class="section-description">
                 Enter your journey details to plan your next trip.
             </p>
-
             <div class="booking-tabs">
                 <a href="#bus-services" class="tab active">🚌 Bus Booking</a>
                 <a href="#train-services" class="tab">🚆 Train Booking</a>
             </div>
-
             <form action="#available-services" method="get">
-
                 <div class="form-grid">
-
                     <div class="form-group">
                         <label for="travel-type">Travel Type</label>
-
                         <select id="travel-type" name="travel-type" required>
                             <option value="">Select Travel Type</option>
                             <option value="bus">Bus</option>
                             <option value="train">Train</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="source">From (Source)</label>
-
                         <select id="source" name="source" required>
                             <option value="">Select Source</option>
                             <option>Vijayawada</option>
@@ -771,10 +539,8 @@
                             <option>Mumbai</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="destination">To (Destination)</label>
-
                         <select id="destination" name="destination" required>
                             <option value="">Select Destination</option>
                             <option>Vijayawada</option>
@@ -786,10 +552,8 @@
                             <option>Mumbai</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="departure">Departure Date</label>
-
                         <input
                             type="date"
                             id="departure"
@@ -797,20 +561,16 @@
                             required
                         >
                     </div>
-
                     <div class="form-group">
                         <label for="return">Return Date (Optional)</label>
-
                         <input
                             type="date"
                             id="return"
                             name="return"
                         >
                     </div>
-
                     <div class="form-group">
                         <label for="journey-class">Travel Class</label>
-
                         <select id="journey-class" name="class">
                             <option value="any">Any Class</option>
                             <option value="sleeper">Sleeper</option>
@@ -821,10 +581,8 @@
                             <option value="1ac">AC First Class</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="adults">Adult Passengers</label>
-
                         <input
                             type="number"
                             id="adults"
@@ -835,10 +593,8 @@
                             required
                         >
                     </div>
-
                     <div class="form-group">
                         <label for="children">Children</label>
-
                         <input
                             type="number"
                             id="children"
@@ -848,10 +604,8 @@
                             value="0"
                         >
                     </div>
-
                     <div class="form-group">
                         <label for="preference">Seat Preference</label>
-
                         <select id="preference" name="preference">
                             <option value="any">No Preference</option>
                             <option value="window">Window Seat</option>
@@ -860,309 +614,218 @@
                             <option value="upper">Upper Berth</option>
                         </select>
                     </div>
-
                     <div class="form-group full-width">
                         <button type="submit" class="search-button">
                             🔍 Search Available Services
                         </button>
                     </div>
-
                 </div>
             </form>
-
         </div>
     </section>
-
-    <!-- SERVICES -->
     <section class="container" id="services">
-
         <h2 class="section-title">Our Travel Services</h2>
-
         <p class="section-description">
             Choose the travel option that best suits your journey.
         </p>
-
         <div class="service-grid">
-
             <div class="service-card">
                 <div class="service-icon">🚌</div>
-
                 <h3>Bus Tickets</h3>
-
                 <p>
                     Travel between cities with AC buses,
                     sleeper buses and comfortable seating.
                 </p>
-
                 <a href="#bus-services">Explore Buses</a>
             </div>
-
             <div class="service-card">
                 <div class="service-icon">🚆</div>
-
                 <h3>Train Tickets</h3>
-
                 <p>
                     Explore express trains, sleeper coaches,
                     chair cars and AC travel classes.
                 </p>
-
                 <a href="#train-services">Explore Trains</a>
             </div>
-
             <div class="service-card">
                 <div class="service-icon">🎫</div>
-
                 <h3>Easy Reservations</h3>
-
                 <p>
                     Review journey details, compare fares
                     and explore seat layouts in one place.
                 </p>
-
                 <a href="#passenger-details">Passenger Details</a>
             </div>
-
         </div>
     </section>
-
-    <!-- AVAILABLE BUS SERVICES -->
     <section class="container" id="bus-services">
-
         <h2 class="section-title">Available Bus Services</h2>
-
         <p class="section-description">
             Sample bus services with timings and estimated fares.
         </p>
-
         <div class="travel-card">
-
             <div class="travel-info">
                 <h3>ExpressLine AC Sleeper</h3>
-
                 <div class="route">
                     Vijayawada <span>→</span> Hyderabad
                 </div>
-
                 <p>AC Sleeper | Charging Points | Water Bottle</p>
             </div>
-
             <div class="travel-time">
                 <h4>10:00 PM</h4>
                 <p>Departure</p>
                 <p>Approx. 5 hours</p>
             </div>
-
             <div class="travel-time">
                 <h4>03:00 AM</h4>
                 <p>Arrival</p>
                 <p>Next day</p>
             </div>
-
             <div class="fare-box">
                 <div class="fare">₹850</div>
                 <small>Per passenger</small>
-
                 <a href="#passenger-details" class="book-button">
                     Book Now
                 </a>
             </div>
-
         </div>
-
         <div class="travel-card">
-
             <div class="travel-info">
                 <h3>GreenWay Non-AC Sleeper</h3>
-
                 <div class="route">
                     Vijayawada <span>→</span> Chennai
                 </div>
-
                 <p>Non-AC Sleeper | Comfortable Berths</p>
             </div>
-
             <div class="travel-time">
                 <h4>08:30 PM</h4>
                 <p>Departure</p>
                 <p>Approx. 7 hours</p>
             </div>
-
             <div class="travel-time">
                 <h4>03:30 AM</h4>
                 <p>Arrival</p>
                 <p>Next day</p>
             </div>
-
             <div class="fare-box">
                 <div class="fare">₹650</div>
                 <small>Per passenger</small>
-
                 <a href="#passenger-details" class="book-button">
                     Book Now
                 </a>
             </div>
-
         </div>
-
         <div class="travel-card">
-
             <div class="travel-info">
                 <h3>RoyalRoad AC Seater</h3>
-
                 <div class="route">
                     Hyderabad <span>→</span> Bengaluru
                 </div>
-
                 <p>AC Seater | Reclining Seats | Charging Points</p>
             </div>
-
             <div class="travel-time">
                 <h4>09:00 PM</h4>
                 <p>Departure</p>
                 <p>Approx. 9 hours</p>
             </div>
-
             <div class="travel-time">
                 <h4>06:00 AM</h4>
                 <p>Arrival</p>
                 <p>Next day</p>
             </div>
-
             <div class="fare-box">
                 <div class="fare">₹1,100</div>
                 <small>Per passenger</small>
-
                 <a href="#passenger-details" class="book-button">
                     Book Now
                 </a>
             </div>
-
         </div>
-
     </section>
-
-    <!-- AVAILABLE TRAIN SERVICES -->
     <section class="container" id="train-services">
-
         <h2 class="section-title">Available Train Services</h2>
-
         <p class="section-description">
             Compare sample train routes, departure times and fares.
         </p>
-
         <div class="travel-card">
-
             <div class="travel-info">
                 <h3>Coastal Express</h3>
-
                 <div class="route">
                     Vijayawada <span>→</span> Visakhapatnam
                 </div>
-
                 <p>Train No. 17001 | Chair Car / Sleeper</p>
             </div>
-
             <div class="travel-time">
                 <h4>06:00 AM</h4>
                 <p>Departure</p>
             </div>
-
             <div class="travel-time">
                 <h4>11:00 AM</h4>
                 <p>Arrival</p>
             </div>
-
             <div class="fare-box">
                 <div class="fare">₹350</div>
                 <small>Sample fare</small>
-
                 <a href="#passenger-details" class="book-button">
                     Book Now
                 </a>
             </div>
-
         </div>
-
         <div class="travel-card">
-
             <div class="travel-info">
                 <h3>Deccan Superfast</h3>
-
                 <div class="route">
                     Vijayawada <span>→</span> Hyderabad
                 </div>
-
                 <p>Train No. 17002 | Sleeper / AC 3 Tier</p>
             </div>
-
             <div class="travel-time">
                 <h4>08:00 AM</h4>
                 <p>Departure</p>
             </div>
-
             <div class="travel-time">
                 <h4>02:00 PM</h4>
                 <p>Arrival</p>
             </div>
-
             <div class="fare-box">
                 <div class="fare">₹500</div>
                 <small>Sample fare</small>
-
                 <a href="#passenger-details" class="book-button">
                     Book Now
                 </a>
             </div>
-
         </div>
-
         <div class="travel-card">
-
             <div class="travel-info">
                 <h3>Southern Express</h3>
-
                 <div class="route">
                     Chennai <span>→</span> Bengaluru
                 </div>
-
                 <p>Train No. 17003 | Chair Car / AC 3 Tier</p>
             </div>
-
             <div class="travel-time">
                 <h4>07:30 AM</h4>
                 <p>Departure</p>
             </div>
-
             <div class="travel-time">
                 <h4>01:30 PM</h4>
                 <p>Arrival</p>
             </div>
-
             <div class="fare-box">
                 <div class="fare">₹450</div>
                 <small>Sample fare</small>
-
                 <a href="#passenger-details" class="book-button">
                     Book Now
                 </a>
             </div>
-
         </div>
-
     </section>
-
-    <!-- FARE DETAILS TABLE -->
     <section class="container" id="fares">
-
         <h2 class="section-title">Fare Information</h2>
-
         <p class="section-description">
             Compare different travel classes and their sample fares.
         </p>
-
         <div class="table-wrapper">
-
             <table>
                 <thead>
                     <tr>
@@ -1174,7 +837,6 @@
                         <th>Availability</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr>
                         <td>Bus</td>
@@ -1184,7 +846,6 @@
                         <td>₹850</td>
                         <td class="available">Available</td>
                     </tr>
-
                     <tr>
                         <td>Bus</td>
                         <td>Vijayawada - Chennai</td>
@@ -1193,7 +854,6 @@
                         <td>₹650</td>
                         <td class="limited">Limited</td>
                     </tr>
-
                     <tr>
                         <td>Bus</td>
                         <td>Hyderabad - Bengaluru</td>
@@ -1202,7 +862,6 @@
                         <td>₹1,100</td>
                         <td class="available">Available</td>
                     </tr>
-
                     <tr>
                         <td>Train</td>
                         <td>Vijayawada - Visakhapatnam</td>
@@ -1211,7 +870,6 @@
                         <td>₹350</td>
                         <td class="available">Available</td>
                     </tr>
-
                     <tr>
                         <td>Train</td>
                         <td>Vijayawada - Hyderabad</td>
@@ -1220,7 +878,6 @@
                         <td>₹500</td>
                         <td class="limited">Limited</td>
                     </tr>
-
                     <tr>
                         <td>Train</td>
                         <td>Chennai - Bengaluru</td>
@@ -1231,36 +888,23 @@
                     </tr>
                 </tbody>
             </table>
-
         </div>
-
         <p class="seat-note">
             Note: All routes, train numbers, timings, availability and fares
             shown on this student project webpage are illustrative examples.
         </p>
-
     </section>
-
-    <!-- PASSENGER DETAILS -->
     <section class="container" id="passenger-details">
-
         <h2 class="section-title">Passenger Information</h2>
-
         <p class="section-description">
             Enter passenger details for a sample reservation.
         </p>
-
         <div class="passenger-box">
-
             <h3>Passenger Details</h3>
-
             <form action="#booking-summary" method="get">
-
                 <div class="passenger-form">
-
                     <div class="form-group">
                         <label for="fullname">Full Name</label>
-
                         <input
                             type="text"
                             id="fullname"
@@ -1269,10 +913,8 @@
                             required
                         >
                     </div>
-
                     <div class="form-group">
                         <label for="age">Age</label>
-
                         <input
                             type="number"
                             id="age"
@@ -1283,10 +925,8 @@
                             required
                         >
                     </div>
-
                     <div class="form-group">
                         <label for="gender">Gender</label>
-
                         <select id="gender" name="gender" required>
                             <option value="">Select Gender</option>
                             <option value="female">Female</option>
@@ -1297,10 +937,8 @@
                             </option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="passenger-class">Travel Class</label>
-
                         <select
                             id="passenger-class"
                             name="passenger-class"
@@ -1314,10 +952,8 @@
                             <option value="2ac">AC 2 Tier</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="email">Email Address</label>
-
                         <input
                             type="email"
                             id="email"
@@ -1326,10 +962,8 @@
                             required
                         >
                     </div>
-
                     <div class="form-group">
                         <label for="phone">Mobile Number</label>
-
                         <input
                             type="tel"
                             id="phone"
@@ -1340,45 +974,30 @@
                             required
                         >
                     </div>
-
                 </div>
-
                 <div class="terms">
                     <input type="checkbox" id="terms" required>
-
                     <label for="terms">
                         I confirm that the passenger information is correct.
                     </label>
                 </div>
-
                 <button type="submit" class="search-button">
                     Continue to Booking Summary
                 </button>
-
             </form>
-
         </div>
     </section>
-
-    <!-- SEAT SELECTION -->
     <section class="container" id="seats">
-
         <h2 class="section-title">Seat Selection Layout</h2>
-
         <p class="section-description">
             Example bus seating arrangement showing available and occupied seats.
         </p>
-
         <div class="passenger-box">
-
             <h3 style="text-align: center;">🚌 Bus Seat Layout</h3>
-
             <p style="text-align: center; color: #687782;">
                 FRONT OF THE BUS
             </p>
-
             <div class="seat-layout">
-
                 <div class="seat">A1</div>
                 <div class="seat">A2</div>
                 <div class="seat aisle">A3</div>
@@ -1405,45 +1024,32 @@
                 <div class="seat">E4</div>
 
             </div>
-
             <div class="seat-legend">
-
                 <div class="legend-item">
                     <span class="legend-box"></span>
                     Available
                 </div>
-
                 <div class="legend-item">
                     <span class="legend-box booked"></span>
                     Occupied
                 </div>
-
                 <div class="legend-item">
                     <span class="legend-box chosen"></span>
                     Example Selected Seat
                 </div>
-
             </div>
-
             <p class="seat-note">
                 This is a visual demonstration only. Seat selection is not
                 interactive because this webpage does not use JavaScript.
             </p>
-
         </div>
-
         <br>
-
         <div class="passenger-box">
-
             <h3 style="text-align: center;">🚆 Train Coach Layout</h3>
-
             <p style="text-align: center; color: #687782;">
                 EXAMPLE TRAIN SEATING ARRANGEMENT
             </p>
-
             <div class="seat-layout">
-
                 <div class="seat">S1</div>
                 <div class="seat">S2</div>
                 <div class="seat aisle">S3</div>
@@ -1463,29 +1069,19 @@
                 <div class="seat">S14</div>
                 <div class="seat aisle">S15</div>
                 <div class="seat occupied">S16</div>
-
             </div>
-
             <p class="seat-note">
                 The train coach diagram is illustrative and does not represent
                 an actual railway coach configuration.
             </p>
-
         </div>
-
     </section>
-
-    <!-- BOOKING SUMMARY -->
     <section class="container" id="booking-summary">
-
         <h2 class="section-title">Booking Summary Example</h2>
-
         <p class="section-description">
             Review a sample ticket summary and estimated travel cost.
         </p>
-
         <div class="table-wrapper">
-
             <table>
                 <thead>
                     <tr>
@@ -1494,26 +1090,22 @@
                         <th>Amount</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr>
                         <td>Travel Service</td>
                         <td>AC Sleeper Bus</td>
                         <td>₹850</td>
                     </tr>
-
                     <tr>
                         <td>Passenger Count</td>
                         <td>1 Adult</td>
                         <td>₹850</td>
                     </tr>
-
                     <tr>
                         <td>Reservation Fee</td>
                         <td>Illustrative service charge</td>
                         <td>₹30</td>
                     </tr>
-
                     <tr>
                         <td>Estimated Total</td>
                         <td>Base fare + sample fee</td>
@@ -1521,174 +1113,117 @@
                     </tr>
                 </tbody>
             </table>
-
         </div>
-
         <p class="seat-note">
             This is a static example. The total does not automatically change
             when you edit the passenger form.
         </p>
-
     </section>
-
-    <!-- SPECIAL OFFERS -->
     <section class="container" id="offers">
-
         <h2 class="section-title">Special Travel Offers</h2>
-
         <p class="section-description">
             Sample promotional offers for your travel booking project.
         </p>
-
         <div class="offer-grid">
-
             <div class="offer-card">
                 <h3>🚌 Bus Travel Offer</h3>
-
                 <p>
                     Save 10% on selected sample bus bookings.
                     Enjoy a comfortable journey at an affordable fare.
                 </p>
-
                 <div class="offer-code">BUS10</div>
             </div>
-
             <div class="offer-card">
                 <h3>🚆 Train Travel Offer</h3>
-
                 <p>
                     Explore a sample student-project offer for selected
                     train journeys and travel classes.
                 </p>
-
                 <div class="offer-code">TRAIN5</div>
             </div>
-
         </div>
-
         <p class="seat-note">
             Offers and discount codes are examples for demonstration only.
         </p>
-
     </section>
-
-    <!-- WHY CHOOSE US -->
     <section class="container">
-
         <h2 class="section-title">Why Choose TravelGo?</h2>
-
         <p class="section-description">
             A simple and convenient interface for planning journeys.
         </p>
-
         <div class="features-grid">
-
             <div class="feature">
                 <h3>🎫 Easy Booking</h3>
-
                 <p>
                     Enter your journey details through a simple booking form.
                 </p>
             </div>
-
             <div class="feature">
                 <h3>💰 Fare Comparison</h3>
-
                 <p>
                     Compare illustrative fares for different travel services.
                 </p>
             </div>
-
             <div class="feature">
                 <h3>💺 Seat Layout</h3>
-
                 <p>
                     View a sample seating arrangement before planning a trip.
                 </p>
             </div>
-
             <div class="feature">
                 <h3>📱 Responsive Design</h3>
-
                 <p>
                     Browse the webpage on desktops, tablets and mobile devices.
                 </p>
             </div>
-
         </div>
-
     </section>
-
-    <!-- CONTACT -->
     <section class="container" id="contact">
-
         <div class="contact">
-
             <h2>Contact TravelGo</h2>
-
             <p>
                 Have questions about your journey? Contact our sample
                 customer-support team.
             </p>
-
             <p><strong>Email:</strong> support@travelgo.example</p>
-
             <p><strong>Phone:</strong> +91 90000 00000</p>
-
             <p><strong>Working Hours:</strong> Monday - Saturday, 9 AM - 6 PM</p>
-
             <p>
                 Note: Contact details are fictional examples for this project.
             </p>
-
         </div>
-
     </section>
-
-    <!-- FOOTER -->
     <footer>
-
         <div class="footer-grid">
-
             <div>
                 <h3>TravelGo</h3>
-
                 <p>
                     Your sample travel booking interface for exploring bus
                     and train services, fare details and passenger forms.
                 </p>
             </div>
-
             <div>
                 <h3>Quick Links</h3>
-
                 <a href="#home">Home</a>
                 <a href="#booking">Book Tickets</a>
                 <a href="#bus-services">Bus Services</a>
                 <a href="#train-services">Train Services</a>
                 <a href="#fares">Fare Details</a>
             </div>
-
             <div>
                 <h3>Travel Information</h3>
-
                 <a href="#passenger-details">Passenger Details</a>
                 <a href="#seats">Seat Layout</a>
                 <a href="#offers">Special Offers</a>
                 <a href="#contact">Contact Us</a>
             </div>
-
         </div>
-
         <div class="copyright">
             <p>
                 &copy; 2026 TravelGo. Student Web Development Project.
                 All Rights Reserved.
             </p>
         </div>
-
     </footer>
-
 </body>
 </html>
-```
